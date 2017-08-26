@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">Undangan Digital Syifa &amp; Adi</string>
+    <string name="action_settings">About Apps</string>
+    <string name="action_gcm_register">GCM Register</string>
+    <string name="action_gcm_unregister">GCM Unregister</string>
+    <string name="title_activity_login">Login</string>
+    <string name="login">Masukan Username:</string>
+    <string name="username">Username</string>
+    <string name="login_submit">Join</string>
+    <string name="enter_new_channel">Enter new channel:</string>
+    <string name="send_message">Kirim Pesan...</string>
+    <string name="action_sign_out">Sign Out</string>
+    <string name="here_now">Here Now:</string>
+</resources>

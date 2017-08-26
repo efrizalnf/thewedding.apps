@@ -1,0 +1,115 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.zlz.thewedding.syifaadi">
+    <permission
+        android:name="com.zlz.thewedding.syifaadi.permission.MAPS_RECEIVE"
+        android:protectionLevel="signature" />
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="com.google.android.providers.gsf.permission.READ_GSERVICES" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <!-- Required to show current location -->
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION" />
+    <uses-permission android:name="android.permission.ACCESS_FINE_LOCATION" />
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+    <uses-permission android:name="com.google.android.c2dm.permission.RECEIVE" />
+    <permission android:name="com.zlz.thewedding.syifaadi.permission.C2D_MESSAGE" android:protectionLevel="signature" />
+    <uses-permission android:name="com.zlz.thewedding.syifaadi.permission.C2D_MESSAGE" />
+
+    <!-- Required OpenGL ES 2.0. for Maps V2 -->
+    <uses-feature
+        android:glEsVersion="0x00020000"
+        android:required="true" />
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme">
+        <activity
+            android:name=".SplashScreen"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <!--<!- Google Maps Fragment API Key Data ->-->
+        <meta-data
+            android:name="com.google.android.maps.v2.API_KEY"
+            android:value="AIzaSyCRHPvI1ZZsI7R56yTWk-unQ-m0Ns6liN4" />
+        <!-- ATTENTION: This was auto-generated to add Google Play services to your project for
+             App Indexing.  See https://g.co/AppIndexing/AndroidStudio for more information. -->
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.eyro.mesosfer.push.notification_icon"
+            android:resource="@drawable/icl_chat"/>
+        <activity
+            android:name=".MainActivity"
+            android:label="@string/app_name"
+            android:theme="@style/AppTheme.NoActionBar"
+            android:screenOrientation="portrait">
+        </activity>
+
+        <activity
+            android:name="com.zlz.thewedding.syifaadi.MapsActivity">
+        </activity>
+        <activity
+            android:name="com.zlz.thewedding.syifaadi.ChatActivity">
+        </activity>
+        <activity
+            android:name=".Undangan">
+        </activity>
+        <activity
+            android:name=".Peta">
+        </activity>
+        <activity
+            android:name=".ImagesLoad">
+        </activity>
+        <activity
+            android:name="com.zlz.thewedding.syifaadi.LoginActivity"
+            android:label="@string/title_activity_login"
+            android:screenOrientation="portrait"
+            android:configChanges="orientation|keyboardHidden">
+        </activity>
+        <receiver
+            android:name="com.zlz.thewedding.syifaadi.pubnubchat.gcm.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND" >
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <category android:name="com.zlz.thewedding.syifaadi" />
+            </intent-filter>
+        </receiver>
+        <service android:name="com.zlz.thewedding.syifaadi.pubnubchat.gcm.GcmIntentService" />
+        <!-- Goolge Maps API Key -->
+        <receiver android:name="com.eyro.mesosfer.PushBroadcastReceiver"
+            android:exported="false">
+            <intent-filter>
+                <action android:name="com.eyro.mesosfer.push.intent.RECEIVE" />
+                <action android:name="com.eyro.mesosfer.push.intent.DELETE" />
+                <action android:name="com.eyro.mesosfer.push.intent.OPEN" />
+            </intent-filter>
+        </receiver>
+
+        <receiver android:name="com.eyro.mesosfer.GcmBroadcastReceiver"
+            android:permission="com.google.android.c2dm.permission.SEND">
+            <intent-filter>
+                <action android:name="com.google.android.c2dm.intent.RECEIVE" />
+                <action android:name="com.google.android.c2dm.intent.REGISTRATION" />
+
+                <category android:name="com.zlz.thewedding.syifaadi" />
+            </intent-filter>
+        </receiver>
+
+    </application>
+    <supports-screens android:resizeable="true"
+        android:smallScreens="true"
+        android:normalScreens="true"
+        android:largeScreens="true"
+        android:xlargeScreens="true"
+        android:anyDensity="true"
+        />
+</manifest>

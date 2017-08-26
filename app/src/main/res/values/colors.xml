@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="colorPrimary">#80d8ff</color>
+    <color name="colorPrimaryDark">#77d2fa</color>
+    <color name="colorAccent">#ff80ab</color>
+    <color name="pn_red">#59cbf9</color>
+    <color name="pn_blue">#80d8ff</color>
+    <color name="white">#FFF</color>
+    <color name="chat_row">#ff80ab</color>>
+</resources>
